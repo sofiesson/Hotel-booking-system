@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AvailableBookingsController">
+   <children>
+      <HBox prefHeight="88.0" prefWidth="995.0">
+         <children>
+            <Pane prefHeight="88.0" prefWidth="995.0" style="-fx-background-color: #DCE5BE; -fx-border-color: #7C8F4C;">
+               <children>
+                  <Text layoutX="422.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Booking">
+                     <font>
+                        <Font name="Baloo Bhaina 2 Regular" size="30.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="371.0" layoutY="18.0">
+                     <image>
+                        <Image url="@../Images/booking.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <HBox prefHeight="388.0" prefWidth="995.0">
+         <children>
+            <Pane prefHeight="343.0" prefWidth="995.0">
+               <children>
+                  <DatePicker fx:id="startDatePicker" layoutX="515.0" layoutY="12.0" prefHeight="31.0" prefWidth="187.0" style="-fx-background-color: #7C8F4C;" />
+                  <DatePicker fx:id="endDatePicker" layoutX="724.0" layoutY="12.0" prefHeight="31.0" prefWidth="187.0" style="-fx-background-color: #7C8F4C;" />
+                  <TableView fx:id="availableRoomsTable" layoutX="4.0" layoutY="56.0" prefHeight="282.0" prefWidth="985.0">
+                     <columns>
+                      <TableColumn fx:id="availableRoomIDColumn" prefWidth="165.0" text="Room_ID" />
+                      <TableColumn fx:id="availableRoomNumberColumn" prefWidth="165.0" text="Room Number" />
+                      <TableColumn fx:id="availableRoomTypeColumn" prefWidth="160.0" text="Room Type" />
+                      <TableColumn fx:id="availableRoomBedsColumn" prefWidth="160.0" text="Beds" />
+                      <TableColumn fx:id="availableRoomSizeColumn" prefWidth="160.0" text="Size (m²)" />
+                      <TableColumn fx:id="availableRoomPriceColumn" prefWidth="173.0" text="Price (SEK)" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="Book" layoutX="855.0" layoutY="347.0" mnemonicParsing="false" onAction="#checkBookButton" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #7C8F4C; -fx-text-fill: #ffffff; -fx-background-radius: 8;" text="Book" />
+                  <Button layoutX="923.0" layoutY="13.0" mnemonicParsing="false" onAction="#showAvailableRooms" prefHeight="28.0" prefWidth="60.0" style="-fx-text-fill: #ffffff; -fx-background-color: #7C8F4C; -fx-border-color: #ffffff; -fx-border-radius: 8; -fx-background-radius: 8;" text="Show" />
+                  <Text layoutX="709.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="feedback" layoutX="533.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="317.21630859375" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
